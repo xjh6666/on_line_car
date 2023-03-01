@@ -6,6 +6,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>api-passenger</module>
+        <module>service-verificationcode</module>
+        <module>internal-common</module>
     </modules>
 
     <parent>
@@ -27,6 +29,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
         </dependency>
     </dependencies>
 </project>
