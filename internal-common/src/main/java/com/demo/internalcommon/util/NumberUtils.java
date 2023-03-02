@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 
 public class NumberUtils {
     //生成六位随机数
-    public static String generateSixRandomNumber(){
+    public static String generateSixRandomNumber(Integer size){
         return String.valueOf((int)((Math.random()*9+1)*100000));
     }
 }
