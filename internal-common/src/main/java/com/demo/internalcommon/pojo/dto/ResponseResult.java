@@ -13,6 +13,10 @@ public class ResponseResult<T> {
     private String message;
     private T data;
 
+    public static ResponseResult success(){
+        return new ResponseResult(CommonConstantEnum.SUCCESS.getCode(),CommonConstantEnum.SUCCESS.getDesc(),null);
+    }
+
     public static ResponseResult success(Object data){
         return new ResponseResult(CommonConstantEnum.SUCCESS.getCode(),CommonConstantEnum.SUCCESS.getDesc(),data);
     }
@@ -23,5 +27,12 @@ public class ResponseResult<T> {
 
     public static ResponseResult fail(Integer code,String message){
         return fail(code,message,null);
+    }
+
+    public Boolean isSuccess(){
+        if(code==0){
+            return true;
+        }
+        return false;
     }
 }
