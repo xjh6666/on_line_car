@@ -12,8 +12,14 @@ import lombok.experimental.Accessors;
  */
 
 public class NumberUtils {
-    //生成六位随机数
-    public static String generateSixRandomNumber(Integer size){
-        return String.valueOf((int)((Math.random()*9+1)*100000));
+    //根据位数生成随机数
+    public static String generateSixRandomNumber(int size){
+        String str = "0123456789";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < size; i++) {
+            char ch = str.charAt((int) (Math.random() * 10));
+            sb.append(ch);
+        }
+        return sb.toString();
     }
 }

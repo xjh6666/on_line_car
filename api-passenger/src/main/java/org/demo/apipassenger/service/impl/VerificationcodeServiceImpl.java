@@ -14,7 +14,7 @@ public class VerificationcodeServiceImpl implements VerificationcodeService {
 
     @Override
     public Object getVerificationcode() {
-        ResponseResult<VerifCodeResponse> verifCode = numberCodeApi.getVerifCode(6);
+        ResponseResult<VerifCodeResponse> verifCode = numberCodeApi.getVerifCode(10);
         System.out.println("获取到的验证码："+verifCode.getData().getVerifCode());
         return "ok";
     }
