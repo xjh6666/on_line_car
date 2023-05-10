@@ -27,7 +27,7 @@ public class VerificationcodeServiceImpl implements VerificationcodeService {
             throw new RuntimeException("手机号不能为空");
         }
         ResponseResult<VerifCodeResponse> verifCodeResponseResponseResult = numberCodeApi.getVerifCode(10);
-        if(verifCodeResponseResponseResult.isSuccess()){
+        if(!verifCodeResponseResponseResult.isSuccess()){
             throw new RuntimeException("获取验证码失败");
         }
 //        System.out.println("获取到的验证码："+verifCodeResponseResponseResult.getData().getVerifCode());
@@ -36,7 +36,7 @@ public class VerificationcodeServiceImpl implements VerificationcodeService {
                 verifCodeResponseResponseResult.getData().getVerifCode(),
                 2,
                 TimeUnit.MINUTES
-                );
+        );
 
         System.out.println(stringRedisTemplate.opsForValue().get(LOGIN_VERIF_CODE_PREFIX+request.getPhone()));
 

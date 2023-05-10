@@ -16,6 +16,7 @@ public class VerificationcodeController {
 
     @PostMapping("/get/verificationcode")
     public ResponseResult getVerificationcode(@RequestBody VerificationcodeRequest request){
-        return ResponseResult.success(verificationcodeService.getVerificationcode(request));
+        verificationcodeService.getVerificationcode(request);
+        return ResponseResult.success();
     }
 }

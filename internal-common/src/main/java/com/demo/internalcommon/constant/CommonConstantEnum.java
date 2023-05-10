@@ -6,7 +6,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum CommonConstantEnum{
-    SUCCESS(200,"成功"),
+    SUCCESS(0,"成功"),
     FAIL(500,"失败");
 
     private Integer code;
