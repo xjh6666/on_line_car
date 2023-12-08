@@ -1,7 +1,7 @@
 package org.demo.apipassenger.service;
 
-import com.demo.internalcommon.pojo.dto.ResponseResult;
-import com.demo.internalcommon.pojo.request.VerificationcodeRequest;
+import com.demo.internalcommon.pojo.request.VerificationCodeRequest;
+import com.demo.internalcommon.pojo.response.VerificationCodeResponse;
 
 public interface VerificationcodeService {
     /**
@@ -9,5 +9,12 @@ public interface VerificationcodeService {
      * @return
      * @param request
      */
-    ResponseResult getVerificationcode(VerificationcodeRequest request);
+     void getVerificationcode(VerificationCodeRequest request);
+
+    /**
+     * z
+     * @paravoid request
+     * @return
+     */
+    VerificationCodeResponse checkVerificationcode(VerificationCodeRequest request);
 }
